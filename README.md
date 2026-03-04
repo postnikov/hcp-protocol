@@ -176,4 +176,4 @@ MIT — use it, fork it, make it yours.
 
 ---
 
-*Created by [Max Postnikov](https://www.linkedin.com/in/postnikov/) and [PRO Community](https://t.me/pro_community).*
+*Created by [Max Postnikov](https://www.linkedin.com/in/postnikov/) and [PRO Community](https://prommunity.org).*
