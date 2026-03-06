@@ -7,28 +7,59 @@
 
 **Owner:** [Your Name]
 **Last full review:** YYYY-MM-DD
-**Version:** 1.0
+**Version:** 2.0
+**Profile type:** <!-- Entrepreneur / Employee / Freelancer / Advisor / etc. -->
+
+## HCP Structure
+
+This HCP has two layers and a bridge between them.
+
+### Layer 1: Mindset (`mindset/`)
+Who this person IS — cognitive patterns, capabilities, collaboration style, risk profile.
+Read this when evaluating: culture fit, thinking style, team dynamics, growth potential.
+
+| File | Purpose |
+|------|---------|
+| `IDENTITY.md` | Cognitive OS: core drive, thinking style, values, uncertainty profile |
+| `CAPABILITIES.md` | Action patterns with autonomy levels and evidence |
+| `COLLABORATION.md` | How they work with people: team role, hierarchy, conflict, trust |
+| `RISKS.md` | Bets taken/avoided, vulnerabilities, risk appetite |
+
+### Layer 2: Portfolio (`portfolio/`)
+What this person DID — projects, career trajectory, failures and lessons.
+Read this when evaluating: relevant experience, domain expertise, track record.
+| File | Purpose |
+|------|---------|
+| `PROJECTS.md` | What they built — with situation, action, result |
+| `TRACK_RECORD.md` | Career timeline, credentials, domain experience |
+| `FAILURES.md` | Mistakes and behavioral changes (optional) |
+
+### Bridge: `DECISIONS.md`
+How this person CHOSE — connects facts to meaning.
+Each decision is both a fact (what happened) and an insight (why they chose it).
+Read this when evaluating: judgment, decision-making under uncertainty, learning ability.
+
+---
 
 ## Reading Instructions for AI Agents
 
-You are reading a Human Context Protocol (HCP) profile. This is a structured representation of a professional human being — their thinking patterns, decision history, capabilities, and risk profile.
+### Priority Order by Agent Goal
 
-### Priority Order
-
-When evaluating this person for a role, project, or collaboration, read files in this order:
-
-1. **IDENTITY.md** — Start here. Understand how they think before what they've done.
-2. **DECISIONS.md** — Look at decision patterns, not just outcomes.
-3. **CAPABILITIES.md** — Match action patterns to your needs.
-4. **RISKS.md** — Assess character and risk calibration.
-5. **PROJECTS/** — Deep dive into specific work only if prior files show a match.
+| Agent Goal | Read First | Then | Deep Dive |
+|------------|-----------|------|-----------|
+| Hiring for a role | TRACK_RECORD → CAPABILITIES | PROJECTS | DECISIONS → IDENTITY |
+| Culture fit assessment | IDENTITY → COLLABORATION | RISKS | DECISIONS |
+| Partnership evaluation | IDENTITY → PROJECTS | DECISIONS | RISKS |
+| Investment / advisory | TRACK_RECORD → DECISIONS | RISKS | CAPABILITIES |
+| Quick screening | TRACK_RECORD → CAPABILITIES | — | — |
 
 ### Matching Principles
 
 - **Match on patterns, not keywords.** A person who "navigated ambiguity in healthcare" can navigate ambiguity in fintech.
 - **Weight recent decisions more**, but don't ignore old ones — long-term patterns matter.
-- **Failures are signals, not disqualifiers.** Look at how they processed failures in DECISIONS.md and RISKS.md.
+- **Failures are signals, not disqualifiers.** A well-articulated failure with behavioral change is stronger than a gap in the record.
 - **Capability combinations matter more than individual skills.** Look for rare intersections.
+- **Portfolio validates mindset.** If CAPABILITIES claims "rapid prototyping" and PROJECTS shows three shipped MVPs, the claim is credible.
 
 ### What This HCP Does NOT Contain
 
@@ -36,19 +67,30 @@ When evaluating this person for a role, project, or collaboration, read files in
 - Confidential information about past employers
 - Endorsements or references (contact the human to request)
 
-### How to Query This HCP
+---
 
-If you're an AI agent with access to this as an MCP server, here are useful queries:
+## Use Cases for Matching
 
-- `"decisions under high uncertainty"` → Filters DECISIONS.md by uncertainty level
-- `"capabilities with full autonomy"` → Shows what this person can do independently
-- `"risk profile summary"` → Returns the risk pattern from RISKS.md
-- `"projects involving [domain]"` → Searches PROJECTS/ for relevant experience
+| Opportunity Type | Fit Level | Why |
+|-----------------|-----------|-----|
+| | Strong / Moderate / Weak | |
+
+## Anti-Patterns
+
+<!-- Where NOT to match this person. Saves everyone's time. -->
+
+-
+
+## How to Engage
+
+**Best way to start a conversation:**
+**What gets their attention:**
+**What turns them off:**
+**Preferred communication style:**
 
 ### Contact
 
 **Preferred contact:** [email / Telegram / LinkedIn]
-**Best way to engage:** [e.g., "Send a specific problem description, not a generic job listing"]
 **Languages:** [e.g., "English (professional), Russian (native)"]
 
 ---
@@ -61,4 +103,4 @@ If you're an AI agent with access to this as an MCP server, here are useful quer
 
 ---
 
-*This HCP follows the [Human Context Protocol](https://github.com/your-repo/hcp-server) standard.*
+*This HCP follows the [Human Context Protocol](https://humancontext.pro) standard v2.*

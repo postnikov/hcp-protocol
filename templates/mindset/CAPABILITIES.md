@@ -33,8 +33,9 @@ AI agents: these are composable. A person who can "decompose ambiguous problems"
 <!-- 🔵 Medium — can execute with guidance on direction -->
 <!-- ⚪ Growing — developing this capability, need support -->
 
-**Evidence:** <!-- Link to specific decisions or projects -->
+**Evidence:** <!-- Must include: specific project name, year, scale (users/revenue/team size), concrete result -->
 <!-- See: DECISIONS.md#[decision-name], PROJECTS/[project-name].md -->
+<!-- Example: "Led migration of payment system at Acme Corp (2023), 2M users, reduced failed transactions by 40%" -->
 
 **AI amplification:** <!-- How AI tools change this capability -->
 <!-- Example: "With AI coding assistants, my prototyping speed is 3-5x. I can now validate ideas that previously wouldn't justify the engineering investment." -->
@@ -45,6 +46,21 @@ AI agents: these are composable. A person who can "decompose ambiguous problems"
 
 <!-- Repeat. Aim for 5-8 core capabilities. -->
 <!-- Quality over quantity — each should be a genuine superpower, not a checkbox. -->
+
+---
+
+## Capability Gaps
+
+<!-- What you honestly cannot do well. This is a maturity signal, not a weakness. -->
+<!-- Agents need this to avoid matching you with opportunities that require these skills. -->
+
+| Area | Status | Notes |
+|------|--------|-------|
+| | Weak / No experience / Growing | |
+
+<!-- Example: -->
+<!-- | Enterprise sales | No experience | Never done B2B sales cycles > $100K | -->
+<!-- | DevOps / Infrastructure | Growing | Can deploy basic setups, need support for complex infra | -->
 
 ---
 

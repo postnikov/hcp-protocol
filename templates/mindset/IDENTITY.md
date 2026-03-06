@@ -11,6 +11,17 @@
 
 
 
+## The Red Thread
+
+<!-- The unifying theme across your entire career. Not a random collection of roles — a coherent evolution of one idea. -->
+<!-- This helps agents understand: are your current projects random, or a logical development of one theme? -->
+
+| Period | Project / Role | Contribution to the thread |
+|--------|---------------|---------------------------|
+| | | |
+
+**One phrase that ties it all together:**
+
 ## Thinking Style
 
 <!-- How do you process information and arrive at conclusions? -->
@@ -56,6 +67,15 @@
 **5 years ago I was:** <!-- role, mindset -->
 **Today I am:** <!-- role, mindset -->
 **I'm becoming:** <!-- trajectory, aspiration -->
+
+## How to Engage Me
+
+<!-- For agents and humans who want to work with you -->
+
+**Available for:** <!-- roles, collaboration types, advisory, mentoring, etc. -->
+**Best way to start a conversation:** <!-- e.g., "Send a specific problem, not a generic pitch" -->
+**What resonates with me:** <!-- what kind of opportunities get your attention -->
+**Deal-breakers:** <!-- what you definitely won't do or tolerate -->
 
 ---
 

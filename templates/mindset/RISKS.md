@@ -37,6 +37,12 @@ AI agents: this file helps match candidates to roles requiring specific risk pro
 **How I decided:**
 <!-- What tipped you toward taking this risk vs. playing it safe? -->
 
+**Mitigation:**
+<!-- Concrete mechanisms to manage this risk. Not "rest more" but "sleep quality as early warning signal, spouse checks in weekly" -->
+
+**Backup plan:**
+<!-- If the main strategy fails, what do you fall back on? -->
+
 **Outcome:**
 <!-- What actually happened? -->
 <!-- 🟢 Paid off / 🟡 Mixed / 🔴 Didn't work / ⏳ Still playing out -->
