@@ -39,6 +39,9 @@ Together they answer two questions no resume can: **"Who are you?"** and **"What
 ├─────────────────────────────────────────────────┤
 │  PORTFOLIO — What you did                       │
 │  Projects, career trajectory, lessons learned   │
+├ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─┤
+│  🎤 SPEAKER — How you speak (optional add-on)  │
+│  Topics, delivery style, appearances            │
 └─────────────────────────────────────────────────┘
 ```
 
@@ -47,6 +50,8 @@ Together they answer two questions no resume can: **"Who are you?"** and **"What
 **Portfolio** is factual — dates, metrics, outcomes. It answers "Have they done this before?" and "What was the impact?"
 
 **Decisions** bridge both worlds. A decision is both a fact ("relocated to build a solo practice in 2023") and a pattern ("prioritizes autonomy over security"). AI agents can follow a decision from portfolio into mindset to understand reasoning, or from mindset into portfolio to find evidence.
+
+**Speaker** is an optional context add-on — topics, delivery format, audience interaction, and appearance history. It answers "What do they speak about?" and "How do they deliver?"
 
 ---
 
@@ -62,7 +67,7 @@ Go to **[humancontext.pro](https://humancontext.pro)**, upload your CV, and let 
 2. **Grab your CV** — any format, any quality. Even a bad one works
 3. **Open any AI assistant** (Claude, ChatGPT, etc.) and paste the prompt from [`prompts/quick-start.md`](prompts/quick-start.md) along with your CV
 4. **Have a 35-50 minute conversation** — the AI interviews you across both layers: mindset (how you think) and portfolio (what you've done)
-5. **Get your draft HCP** — the AI generates all core files in both layers
+5. **Get your draft HCP** — the AI generates all 9 core files (+ 3 optional speaker files if relevant)
 6. **Commit and start the weekly rhythm**
 
 > 💡 You don't need to fill everything at once. Even just `IDENTITY.md` + one project in `PROJECTS.md` = a working HCP. Portfolio and mindset can be filled independently, in any order.
@@ -82,6 +87,10 @@ your-hcp/
 │   ├── PROJECTS.md
 │   ├── TRACK_RECORD.md
 │   └── FAILURES.md          (optional)
+├── speaker/                ← How you speak (context add-on, optional)
+│   ├── SPEAKER_TOPICS.md
+│   ├── SPEAKER_STYLE.md
+│   └── SPEAKER_APPEARANCES.md
 ├── DECISIONS.md            ← Bridge between mindset and portfolio
 └── META.md                 ← Navigation for AI agents
 ```
@@ -114,6 +123,64 @@ your-hcp/
 | File | Answers | Update Cadence |
 |------|---------|----------------|
 | `META.md` | "How should an AI read me?" | When structure changes |
+
+### Speaker (Optional Add-on)
+
+| File | Answers | Context |
+|------|---------|---------|
+| `SPEAKER_TOPICS.md` | "What do you speak about?" | Optional |
+| `SPEAKER_STYLE.md` | "How do you deliver?" | Optional |
+| `SPEAKER_APPEARANCES.md` | "Where have you spoken?" | Optional |
+
+---
+
+## Context System
+
+HCP is built around an extensible **context system**. Each context is a coherent set of files that describe one facet of a person's professional identity.
+
+### Professional Context (required)
+
+The core 9 files — mindset, portfolio, decisions, and meta. This is the foundation every HCP profile starts with. It captures who you are as a professional: how you think, what you've built, and how you make decisions.
+
+### Speaker Context (optional)
+
+3 additional files for people who give talks, workshops, or keynotes. Captures speaking topics, delivery style, audience interaction preferences, and a log of past appearances. Activated separately — you can build your professional context first and add speaker later.
+
+### Future Contexts
+
+The context system is designed to grow. Potential future add-ons:
+
+- **Researcher** — publications, methodologies, peer review style
+- **Mentor** — teaching approach, mentee outcomes, knowledge transfer patterns
+- **Creator** — content portfolio, audience, creative process
+
+Each context follows the same pattern: a focused set of files, an optional interview flow, and independent activation via `enabled_contexts`.
+
+---
+
+## File Status Lifecycle
+
+Every HCP file progresses through three statuses:
+
+| Status | Meaning |
+|--------|---------|
+| **empty** | No content yet — the file exists as a template but hasn't been filled |
+| **draft** | Has content but needs work — thin sections, missing detail, or `[? VERIFY]` markers |
+| **complete** | All required sections filled with substantive content |
+
+### `[? VERIFY]` Markers
+
+When the AI interviewer isn't confident about a fact — a date, a metric, a company name — it flags it with a `[? VERIFY]` marker:
+
+```markdown
+Led the migration to microservices at [? VERIFY: Acme Corp, 2021], reducing deploy time by [? VERIFY: 40%].
+```
+
+These markers serve two purposes:
+1. **Honesty** — the profile explicitly separates confirmed facts from uncertain ones
+2. **Action items** — you can search for `[? VERIFY]` to find everything that needs checking
+
+A file with unresolved `[? VERIFY]` markers stays in `draft` status until all markers are resolved.
 
 ---
 
@@ -157,17 +224,42 @@ HCP respects your privacy and NDAs. The protocol defines four visibility scopes:
 
 ---
 
-## HCP as MCP Server — Live
+## HCP as MCP Server
 
-Your published HCP profile runs as an MCP server at `humancontext.pro`. AI agents (Claude Desktop, etc.) connect and query your context directly.
+Your published HCP profile runs as an [MCP](https://modelcontextprotocol.io/) (Model Context Protocol) server. AI agents connect and query your professional context directly — no scraping, no guessing, no stale data.
+
+### Resources
+
+Each HCP file is exposed as an MCP resource with layer-prefixed URIs:
 
 ```
-Employer Agent  →  connects to  →  humancontext.pro/api/profiles/{you}/mcp/mcp
-                                    ├── Read mindset: IDENTITY, CAPABILITIES, COLLABORATION, RISKS
-                                    ├── Read portfolio: PROJECTS, TRACK_RECORD, FAILURES
-                                    ├── Read bridge: DECISIONS
-                                    └── ask_question("How do they handle uncertainty?")
+hcp://{slug}/mindset/IDENTITY.md
+hcp://{slug}/mindset/CAPABILITIES.md
+hcp://{slug}/mindset/COLLABORATION.md
+hcp://{slug}/mindset/RISKS.md
+hcp://{slug}/portfolio/PROJECTS.md
+hcp://{slug}/portfolio/TRACK_RECORD.md
+hcp://{slug}/portfolio/FAILURES.md
+hcp://{slug}/DECISIONS.md
+hcp://{slug}/META.md
+hcp://{slug}/speaker/TOPICS.md
+hcp://{slug}/speaker/STYLE.md
+hcp://{slug}/speaker/APPEARANCES.md
 ```
+
+Agents can read individual files or use the tools below for higher-level queries.
+
+### Tools
+
+| Tool | Purpose |
+|------|---------|
+| `list_contexts` | List available contexts and metadata |
+| `get_profile_overview` | Overview with configurable detail (brief/standard/detailed) |
+| `get_context_summary` | Focused summary of one context (professional, speaker) |
+| `ask_question` | Ask any question about the profile, optionally scoped to a context |
+| `get_contacts` | Contact information |
+| `compare_contexts` | Compare 2-4 contexts (e.g. professional vs speaker persona) |
+| `match_opportunity` | Evaluate fit for a job, speaking gig, or collaboration |
 
 ### Connect from Claude Desktop
 
@@ -181,6 +273,8 @@ Employer Agent  →  connects to  →  humancontext.pro/api/profiles/{you}/mcp/m
 }
 ```
 
+Any MCP-compatible agent can connect the same way. The server speaks Streamable HTTP — no local setup required.
+
 ---
 
 ## Repository Structure
@@ -190,7 +284,7 @@ hcp-protocol/
 ├── README.md
 ├── CONTRIBUTING.md
 ├── LICENSE
-├── templates/                       ← HCP file templates
+├── templates/
 │   ├── mindset/
 │   │   ├── IDENTITY.md
 │   │   ├── CAPABILITIES.md
@@ -200,16 +294,20 @@ hcp-protocol/
 │   │   ├── PROJECTS.md
 │   │   ├── TRACK_RECORD.md
 │   │   └── FAILURES.md
+│   ├── speaker/
+│   │   ├── SPEAKER_TOPICS.md
+│   │   ├── SPEAKER_STYLE.md
+│   │   └── SPEAKER_APPEARANCES.md
 │   ├── DECISIONS.md
 │   └── META.md
-├── prompts/                         ← AI prompts for filling templates
-│   ├── quick-start.md               ← Start here: CV → HCP in one session
+├── prompts/
+│   ├── quick-start.md
 │   ├── extract-identity.md
 │   ├── extract-decisions.md
 │   ├── distill-capabilities.md
-│   ├── extract-collaboration.md     ← NEW in v2
+│   ├── extract-collaboration.md
 │   ├── extract-risks.md
-│   ├── extract-portfolio.md         ← NEW in v2
+│   ├── extract-portfolio.md
 │   └── weekly-reflection.md
 └── examples/
     └── sample-profile/

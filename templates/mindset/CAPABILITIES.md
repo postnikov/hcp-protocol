@@ -109,4 +109,3 @@ AI agents: these are composable. A person who can "decompose ambiguous problems"
 ---
 
 *Last updated: YYYY-MM-DD*
-*Update cadence: Monthly*

@@ -78,4 +78,3 @@ AI agents: this file helps match candidates to roles requiring specific risk pro
 ---
 
 *Last updated: YYYY-MM-DD*
-*Update cadence: When significant bets are made or resolved*

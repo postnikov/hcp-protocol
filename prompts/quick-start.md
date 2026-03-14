@@ -11,7 +11,7 @@
 Prepare your CV in any format — PDF, text, LinkedIn export, even a screenshot.
 Don't worry about quality. A bad CV is still a starting point.
 
-**Time needed:** 35-50 minutes for the first session. You'll walk away with draft versions of all core HCP files across both layers (mindset + portfolio).
+**Time needed:** 35-50 minutes for the first session. You'll walk away with draft versions of all 9 core HCP files across both layers (mindset + portfolio). Speaker context files (3 additional) can be generated separately if needed.
 
 ---
 
@@ -91,7 +91,7 @@ After the interview, generate draft versions of all HCP files in two layers:
 **Navigation:**
 9. META.md (pre-filled with contact info and reading instructions)
 
-Mark every section you're uncertain about with [❓ VERIFY] so I know what to revisit.
+Mark every section you're uncertain about with [? VERIFY] so I know what to revisit. These markers flag the file as "draft" status until resolved.
 
 ## IMPORTANT GUIDELINES
 
@@ -114,8 +114,9 @@ Mark every section you're uncertain about with [❓ VERIFY] so I know what to re
 Your first HCP draft will be rough. That's perfect. Here's the path forward:
 
 **Day 1** (today): Run this prompt → get draft HCP files in two layers (mindset + portfolio)
-**Week 1**: Review drafts, fix what feels wrong, add one more decision to DECISIONS.md
+**Week 1**: Review drafts, resolve `[? VERIFY]` markers, add one more decision to DECISIONS.md
 **Week 2+**: Use the [Weekly Reflection](./weekly-reflection.md) prompt every Friday to keep it alive
+**Optional**: If you're a public speaker, use the speaker context templates to add `SPEAKER_TOPICS.md`, `SPEAKER_STYLE.md`, and `SPEAKER_APPEARANCES.md`
 
 The goal isn't perfection. The goal is to **start the flywheel**.
 A mediocre HCP that gets updated weekly will beat a perfect one that was written once and forgotten.

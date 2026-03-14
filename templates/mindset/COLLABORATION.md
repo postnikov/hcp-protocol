@@ -125,4 +125,3 @@ Neither is better — but fit matters.
 ---
 
 *Last updated: YYYY-MM-DD*
-*Update cadence: Quarterly*

@@ -78,4 +78,3 @@ let you filter candidates before reading deeper files.
 ---
 
 *Last updated: YYYY-MM-DD*
-*Update cadence: When roles change*

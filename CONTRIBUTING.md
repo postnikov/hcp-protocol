@@ -29,12 +29,20 @@ If you've used the templates and found something that could be better:
 2. In your PR description, explain **what problem you hit** and **how your change fixes it**
 3. If you're changing a template structure, explain why the new structure captures something the old one missed
 
+### Propose New Context Add-ons
+
+HCP supports context-specific extensions (like the Speaker context). If you have an idea for a new context:
+
+1. Define 2-4 files that capture the context
+2. Explain what questions they answer that the core profile doesn't
+3. Submit a PR to `templates/` with the new context directory and an update to META.md
+
 ### Build Tools
 
 The protocol is open. Build whatever you want on top of it:
 
 - HCP viewers and renderers
-- MCP server implementations
+- MCP server implementations (see the [7-tool MCP spec](https://humancontext.pro) for reference)
 - CLI tools for generating or validating HCP files
 - Integrations with LinkedIn, GitHub, or other platforms
 

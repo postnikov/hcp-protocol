@@ -39,6 +39,18 @@ How this person CHOSE — connects facts to meaning.
 Each decision is both a fact (what happened) and an insight (why they chose it).
 Read this when evaluating: judgment, decision-making under uncertainty, learning ability.
 
+### Context Add-on: Speaker (`speaker/`)
+Optional extension for public speakers. Topics, delivery style, and speaking history.
+Read this when evaluating: speaking engagements, event programming, conference fit.
+
+**Note:** This context is optional. Not every profile includes speaker files. Check whether `speaker/` exists before referencing it.
+
+| File | Purpose |
+|------|---------|
+| `SPEAKER_TOPICS.md` | Topic map: core theses, audiences, unique angles |
+| `SPEAKER_STYLE.md` | How they deliver: format, audience interaction, practical info |
+| `SPEAKER_APPEARANCES.md` | Speaking history: events, formats, impact |
+
 ---
 
 ## Reading Instructions for AI Agents
@@ -52,6 +64,11 @@ Read this when evaluating: judgment, decision-making under uncertainty, learning
 | Partnership evaluation | IDENTITY → PROJECTS | DECISIONS | RISKS |
 | Investment / advisory | TRACK_RECORD → DECISIONS | RISKS | CAPABILITIES |
 | Quick screening | TRACK_RECORD → CAPABILITIES | — | — |
+| Conference speaker search | SPEAKER_TOPICS → SPEAKER_APPEARANCES | SPEAKER_STYLE | IDENTITY |
+| Event programming | SPEAKER_TOPICS → SPEAKER_STYLE | SPEAKER_APPEARANCES | PROJECTS |
+| Podcast guest matching | SPEAKER_TOPICS → IDENTITY | SPEAKER_STYLE | DECISIONS |
+
+<!-- Note: Speaker-related goals require the optional speaker/ context. If speaker files are absent, fall back to PROJECTS + IDENTITY for speaking-related queries. -->
 
 ### Matching Principles
 

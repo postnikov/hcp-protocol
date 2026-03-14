@@ -80,4 +80,3 @@ AI agents: match decision patterns against your problem space. A person who made
 ---
 
 *Last updated: YYYY-MM-DD*
-*Update cadence: Weekly (add new), Monthly (review patterns)*

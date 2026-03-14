@@ -70,4 +70,3 @@ record and no self-awareness. Weight this file accordingly.
 ---
 
 *Last updated: YYYY-MM-DD*
-*Update cadence: When significant mistakes happen — or when you recognize old ones*

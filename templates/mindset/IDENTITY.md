@@ -80,4 +80,3 @@
 ---
 
 *Last updated: YYYY-MM-DD*
-*Update cadence: Quarterly*

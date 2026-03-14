@@ -71,4 +71,3 @@ to help you filter: Project, Initiative, Artifact, or Transformation.
 ---
 
 *Last updated: YYYY-MM-DD*
-*Update cadence: Monthly — add new projects, archive old ones*
