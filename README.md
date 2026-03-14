@@ -68,7 +68,7 @@ Go to **[humancontext.pro](https://humancontext.pro)**, upload your CV, and let 
 3. **Open any AI assistant** (Claude, ChatGPT, etc.) and paste the prompt from [`prompts/quick-start.md`](prompts/quick-start.md) along with your CV
 4. **Have a 35-50 minute conversation** — the AI interviews you across both layers: mindset (how you think) and portfolio (what you've done)
 5. **Get your draft HCP** — the AI generates all 9 core files (+ 3 optional speaker files if relevant)
-6. **Commit and start the weekly rhythm**
+6. **Commit and start the monthly rhythm**
 
 > 💡 You don't need to fill everything at once. Even just `IDENTITY.md` + one project in `PROJECTS.md` = a working HCP. Portfolio and mindset can be filled independently, in any order.
 
@@ -116,7 +116,7 @@ your-hcp/
 
 | File | Answers | Update Cadence |
 |------|---------|----------------|
-| `DECISIONS.md` | "How do you choose?" | Weekly |
+| `DECISIONS.md` | "How do you choose?" | Monthly |
 
 ### Navigation
 
@@ -205,11 +205,11 @@ HCP is not a document you write once. It's a living representation that grows wi
 
 | Cadence | What | How |
 |---------|------|-----|
-| **Weekly** | Quick reflection | AI asks 3-5 questions, updates DECISIONS and CAPABILITIES |
-| **Monthly** | Pattern review | AI analyzes the month, surfaces emerging themes |
+| **Monthly** | Reflection + pattern review | AI asks questions, updates DECISIONS, CAPABILITIES, and surfaces emerging themes |
 | **Quarterly** | Identity distillation | Deep review of IDENTITY.md and COLLABORATION.md — has your core shifted? |
+| **On change** | Event-driven updates | New role, major decision, bet made/resolved, project completed |
 
-Use the [`prompts/weekly-reflection.md`](prompts/weekly-reflection.md) prompt to maintain the rhythm.
+Use the [`prompts/reflection.md`](prompts/reflection.md) prompt to maintain the rhythm.
 
 ---
 
@@ -308,7 +308,7 @@ hcp-protocol/
 │   ├── extract-collaboration.md
 │   ├── extract-risks.md
 │   ├── extract-portfolio.md
-│   └── weekly-reflection.md
+│   └── reflection.md
 └── examples/
     └── sample-profile/
 ```

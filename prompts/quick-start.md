@@ -115,11 +115,11 @@ Your first HCP draft will be rough. That's perfect. Here's the path forward:
 
 **Day 1** (today): Run this prompt → get draft HCP files in two layers (mindset + portfolio)
 **Week 1**: Review drafts, resolve `[? VERIFY]` markers, add one more decision to DECISIONS.md
-**Week 2+**: Use the [Weekly Reflection](./weekly-reflection.md) prompt every Friday to keep it alive
+**Month 2+**: Use the [Monthly Reflection](./reflection.md) prompt to keep it alive
 **Optional**: If you're a public speaker, use the speaker context templates to add `SPEAKER_TOPICS.md`, `SPEAKER_STYLE.md`, and `SPEAKER_APPEARANCES.md`
 
 The goal isn't perfection. The goal is to **start the flywheel**.
-A mediocre HCP that gets updated weekly will beat a perfect one that was written once and forgotten.
+A mediocre HCP that gets updated monthly will beat a perfect one that was written once and forgotten.
 
 ---
 
