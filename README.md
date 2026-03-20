@@ -59,7 +59,7 @@ Together they answer two questions no resume can: **"Who are you?"** and **"What
 
 ### Option A: Use the Web App
 
-Go to **[humancontext.pro](https://humancontext.pro)**, upload your CV, and let the AI interviewer build your HCP profile in 35-50 minutes.
+Go to **[humancontext.pro](https://humancontext.pro)**, upload your CV, and let the AI interviewer build your HCP profile in 20-50 minutes.
 
 ### Option B: DIY with Templates
 
@@ -71,6 +71,8 @@ Go to **[humancontext.pro](https://humancontext.pro)**, upload your CV, and let 
 6. **Commit and start the monthly rhythm**
 
 > 💡 You don't need to fill everything at once. Even just `IDENTITY.md` + one project in `PROJECTS.md` = a working HCP. Portfolio and mindset can be filled independently, in any order.
+
+> 🌍 **Bilingual support:** Templates and interview prompts are available in English and Russian. The web app detects language automatically.
 
 ---
 
@@ -156,6 +158,21 @@ The context system is designed to grow. Potential future add-ons:
 
 Each context follows the same pattern: a focused set of files, an optional interview flow, and independent activation via `enabled_contexts`.
 
+### Context Definition
+
+Each context is defined by a standard shape:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Unique identifier (`"professional"`, `"speaker"`) |
+| `label` | { en, ru } | Display name per language |
+| `description` | { en, ru } | What this context covers |
+| `files` | string[] | File names belonging to this context |
+| `required` | boolean | Whether every profile must have it |
+| `mcpNamespace` | string | Resource namespace prefix |
+
+Profiles track active contexts via `enabled_contexts[]`. New contexts follow this same shape — add the definition, the files, and an optional interview flow.
+
 ---
 
 ## File Status Lifecycle
@@ -181,6 +198,30 @@ These markers serve two purposes:
 2. **Action items** — you can search for `[? VERIFY]` to find everything that needs checking
 
 A file with unresolved `[? VERIFY]` markers stays in `draft` status until all markers are resolved.
+
+---
+
+## Interview Modes
+
+The web app supports multiple interview modes depending on your starting point:
+
+| Mode | When to use | Scope |
+|------|-------------|-------|
+| **Full** | Starting from scratch | All 8 (pro) or 4 (speaker) phases |
+| **Improve all** | Reviewing existing profile | All phases, adapts to current content |
+| **Improve specific** | Focus on selected files | Warmup + relevant phases + synthesis |
+| **Boost file** | Quick single-file improvement | One targeted phase |
+| **Resolve flags** | Fix `[? VERIFY]` markers | One phase focused on verification |
+
+### Professional Phases (8)
+
+warmup → identity → decisions → capabilities → collaboration → risks → portfolio → synthesis
+
+### Speaker Phases (4)
+
+speaker-topics → speaker-style → speaker-appearances → speaker-synthesis
+
+Each phase targets specific HCP files and uses context files from earlier phases. The synthesis phase reviews all files, resolves remaining flags, and generates META.md.
 
 ---
 
@@ -247,7 +288,7 @@ hcp://{slug}/speaker/STYLE.md
 hcp://{slug}/speaker/APPEARANCES.md
 ```
 
-Agents can read individual files or use the tools below for higher-level queries.
+Agents can read individual files or use the tools below for higher-level queries. Resources are context-driven: only files from enabled contexts with substantive content are exposed.
 
 ### Tools
 
@@ -257,9 +298,9 @@ Agents can read individual files or use the tools below for higher-level queries
 | `get_profile_overview` | Overview with configurable detail (brief/standard/detailed) |
 | `get_context_summary` | Focused summary of one context (professional, speaker) |
 | `ask_question` | Ask any question about the profile, optionally scoped to a context |
-| `get_contacts` | Contact information |
+| `get_contacts` | Structured contact info (zero tokens, no LLM call) |
 | `compare_contexts` | Compare 2-4 contexts (e.g. professional vs speaker persona) |
-| `match_opportunity` | Evaluate fit for a job, speaking gig, or collaboration |
+| `match_opportunity` | Evaluate fit — returns score, strengths, gaps, talking points |
 
 ### Connect from Claude Desktop
 
@@ -274,6 +315,66 @@ Agents can read individual files or use the tools below for higher-level queries
 ```
 
 Any MCP-compatible agent can connect the same way. The server speaks Streamable HTTP — no local setup required.
+
+### Discovery Endpoint
+
+`GET /api/profiles/{slug}/mcp` returns machine-readable metadata:
+
+| Field | Content |
+|-------|---------|
+| `version` | MCP server version |
+| `contexts[]` | id, label, file_count per enabled context |
+| `tools[]` | All 7 tool names |
+| `claude_desktop_config` | Copy-paste ready config |
+
+### Structured Contacts
+
+Contact information is stored as structured data alongside HCP files:
+
+| Field | Type |
+|-------|------|
+| `email` | string |
+| `telegram` | string |
+| `linkedin` | URL |
+| `twitter` | string |
+| `website` | URL |
+| `phone` | string |
+| `preferred_method` | string |
+| `custom` | key-value pairs |
+
+The `get_contacts` tool returns this directly (zero tokens, no LLM call).
+
+---
+
+## HCP as A2A Agent
+
+Each published profile is discoverable via the [A2A](https://a2a-protocol.org/) (Agent-to-Agent) v1.0 protocol.
+
+### Agent Card
+
+`GET /api/profiles/{slug}/agent.json` returns an Agent Card with:
+
+- **`supportedInterfaces`** — MCP endpoint URL, binding (`json-rpc`), protocol version
+- **`skills`** — all 7 tools with tags, example questions, input/output modes
+- **`capabilities`** — streaming, push notifications, state history
+
+Skills adapt to the profile: `compare_contexts` appears only when 2+ contexts are enabled.
+
+### Domain-Level Discovery
+
+`GET /.well-known/agent.json` lists all published profiles:
+
+```json
+{
+  "protocol": "a2a",
+  "protocolVersion": "1.0.0",
+  "agents": [
+    { "name": "HCP: Max Postnikov", "url": "https://humancontext.pro/api/profiles/postnikov/agent.json" }
+  ]
+}
+```
+
+Any A2A-compatible platform can discover all HCP profiles on the domain.
 
 ---
 
