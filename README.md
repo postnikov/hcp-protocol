@@ -93,6 +93,8 @@ spec/
         └── templates/         # 3 file templates
 prompts/
 └── bootstrap-human-core.md    # build your Human Core with any LLM
+examples/
+└── max-postnikov/             # the author's real Human Core, flattened for publication
 ```
 
 Templates are **exported directly from the production code** of [humancontext.pro](https://humancontext.pro) — the spec and the live product cannot drift.
