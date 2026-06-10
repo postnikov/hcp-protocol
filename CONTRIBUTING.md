@@ -1,6 +1,6 @@
 # Contributing to HCP Protocol
 
-Thanks for your interest in shaping the future of professional identity.
+Thanks for your interest in shaping how humans represent themselves to AI agents.
 
 ## How to Contribute
 
@@ -35,14 +35,14 @@ HCP supports context-specific extensions (like the Speaker context). If you have
 
 1. Define 2-4 files that capture the context
 2. Explain what questions they answer that the core profile doesn't
-3. Submit a PR to `templates/` with the new context directory and an update to META.md
+3. Submit a PR to `spec/contexts/` with a manifest + templates directory (see `spec/contexts/README.md` for the pattern)
 
 ### Build Tools
 
 The protocol is open. Build whatever you want on top of it:
 
 - HCP viewers and renderers
-- MCP server implementations (see the [7-tool MCP spec](https://humancontext.pro) for reference)
+- MCP server implementations (see the 8-tool reference at [humancontext.pro](https://humancontext.pro))
 - CLI tools for generating or validating HCP files
 - Integrations with LinkedIn, GitHub, or other platforms
 
